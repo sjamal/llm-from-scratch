@@ -2,6 +2,8 @@
 
 An end-to-end, reproducible educational project designed to demystify Large Language Models (LLMs). This repository breaks down modern AI architecture into bite-sized, inspectable Python components—from basic rule-based systems to autoregressive transformer generation.
 
+---
+
 ## 📁 Repository Structure
 
 ```text
@@ -25,6 +27,8 @@ llm-from-scratch/
 ├── README.md
 └── ROADMAP.md
 
+---
+
 ## 📌 Architecture Overview
 
 [ Input Text ]
@@ -41,6 +45,8 @@ llm-from-scratch/
 ▼
 [ Softmax & Sampler ]   ─► Applies Temperature & Top-P for next-token prediction
 
+---
+
 ## 🚀 Key Modules
 
 1. **Rule-Based Systems**: Pattern matching & state mechanics (`Eliza`).
@@ -49,6 +55,8 @@ llm-from-scratch/
 4. **Embeddings**: Skip-gram Word2Vec model with vector arithmetic (`king - man + woman = queen`).
 5. **Transformer**: Causal multi-head self-attention, layer normalization, and residual connections.
 6. **Sampling**: Autoregressive loop with Temperature and Top-P filtering.
+
+---
 
 ## 🛠️ Setup & Installation
 
@@ -71,7 +79,12 @@ pip install -e ".[dev]"
 # Run test suite
 python -m pytest tests/
 
+# Execute text generation runner
+python scripts/generate.py --prompt "hello world" --temp 0.7 --top_p 0.9
+
 ```
+
+---
 
 ## 📜 License
 Distributed under the MIT License. See LICENSE for details.
@@ -87,14 +100,20 @@ Distributed under the MIT License. See LICENSE for details.
 - [x] **02_neural_net**: Build a single vs. multi-layer perceptron to solve XOR using pure backpropagation in NumPy.
 
 ## Phase 2: Representation & Tokenization
-- [ ] **03_tokenizer**: Build a Byte-Pair Encoding (BPE) algorithm from scratch to learn subword vocabularies.
-- [ ] **04_embeddings**: Train Skip-gram Word2Vec vectors to capture semantic space and vector operations.
+- [x] **03_tokenizer**: Build a Byte-Pair Encoding (BPE) algorithm from scratch to learn subword vocabularies.
+- [x] **04_embeddings**: Train Skip-gram Word2Vec vectors to capture semantic space and vector operations.
 
 ## Phase 3: Transformer Core
-- [ ] **05_transformer/attention.py**: Scaled dot-product attention with causal mask ($Q, K, V$).
-- [ ] **05_transformer/decoder.py**: Multi-head attention block, LayerNorm, and Feed-Forward Neural Network (FFN).
+- [x] **05_transformer/attention.py**: Scaled dot-product attention with causal mask ($Q, K, V$).
+- [x] **05_transformer/decoder.py**: Multi-head attention block, LayerNorm, and Feed-Forward Neural Network (FFN).
 
 ## Phase 4: Inference & Generation
-- [ ] **06_generation**: Temperature, Top-K, and Top-P (Nucleus) sampling logic.
-- [ ] **CLI Scripts**: Training and inference scripts for generating stories on small datasets.
+- [x] **06_generation**: Temperature, Top-K, and Top-P (Nucleus) sampling logic.
+- [x] **CLI Scripts**: Training and inference scripts for generating stories on small datasets.
+
+---
+
+
+
+
 
