@@ -2,27 +2,35 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main, develop ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-        cache: "pip"
+      # Updated to v4.2.2 to resolve Node deprecation warnings
+      - name: Check out repository
+        uses: actions/checkout@v4.2.2
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest numpy torch
+      # Updated to v5.4.0
+      - name: Set up Python
+        uses: actions/setup-python@v5.4.0
+        with:
+          python-version: '3.11'
+          cache: 'pip'
 
-    - name: Run Unit Tests
-      run: |
-        pytest tests/ -v
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+
+      - name: Run tests
+        # Set PYTHONPATH so pytest can discover the src module
+        env:
+          PYTHONPATH: .
+        run: |
+          pytest tests -v
