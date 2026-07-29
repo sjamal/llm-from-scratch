@@ -1,0 +1,15 @@
+# Repository Standards & Git Workflow
+
+## Branching & Release Model
+- Default Branch: `develop`
+- Production Branch: `main`
+- Workflow: Feature branches (`feature/<description>`) -> Merge to `develop` (`--no-ff`) -> Periodic release merge to `main`.
+- Issue Tracking: Link commits/branches to GitHub issues using `gh` CLI commands.
+
+## Privacy & Hygiene Rules
+- NEVER include local file paths (e.g., `/Users/...`, `/home/...`, `C:\...`), user names, or machine identifiers in code, docstrings, commit messages, or markdown documentation.
+- Maintain a strict `.gitignore` to exclude bytecode, `.venv`, `.DS_Store`, build artifacts, and egg-info files.
+
+## Documentation & Testing Standards
+- Provide complete code, comprehensive unit tests (`pytest`), and clear CLI execution commands.
+- Maintain updated math and architecture documentation in `docs/` alongside code changes.

@@ -1,3 +1,7 @@
+# Personal & Local AI Notes / Prompts
+.prompts
+*.local.md
+
 # Python Bytecode & Cache
 __pycache__/
 *.py[cod]

@@ -113,7 +113,13 @@ Distributed under the MIT License. See LICENSE for details.
 
 ---
 
+## Repository Workflow & AI Guidelines
 
+This repository follows a disciplined engineering workflow:
+- **Default Branch**: `develop` for active feature integration.
+- **Production Branch**: `main` for stable releases.
+- **AI Workspace Rules**: Standardized project constraints, code style, and architectural guidelines are defined in `.cursorrules`.
+- **Privacy & Security**: Commit history and documentation strictly use non-sensitive anonymous identifiers.
 
 
 
